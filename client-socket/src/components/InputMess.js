@@ -18,6 +18,7 @@ export default class InputMess extends Component {
     handlerSubmit=(e)=>{
         e.preventDefault()
         this.props.info(this.state.text)
+        this.setState({...this.state, text: ""})
     }
 
     render() {
@@ -30,6 +31,7 @@ export default class InputMess extends Component {
                 }}
                 type="text"
                 placeholder="Your message"
+                value={this.state.text}
               />
             </Form.Group>
     
