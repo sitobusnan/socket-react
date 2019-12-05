@@ -1,21 +1,17 @@
 import React, { Component } from "react";
-import InputMess from "./InputMess";
+import InputMess from "../InputMess/InputMess";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, ListGroup, Col, Container} from 'react-bootstrap'
-import './chat.css'
+import './Chat.css'
 
 
 
-export default class chat extends Component {
+export default class Chat extends Component {
   constructor(props) {
     super(props);
     console.log(this.props);
     this.state = {
       messages: [],
-      obj : {
-        a: "a",
-        b: "b"
-      }
     };
     this.socket = this.props.socket;
     this.socket.on("newMessage", message => {
@@ -26,6 +22,7 @@ export default class chat extends Component {
   }
 
   sendMessage = text => {
+    if(text.trim()==="")return
     let mess = {
       text: text,
       user: this.props.user

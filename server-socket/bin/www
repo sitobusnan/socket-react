@@ -47,6 +47,8 @@ server.listen(process.env.PORT, () => {
   console.log(`Listening on http://localhost:${process.env.PORT}`);
 });
 
+const Movie = require("../models/Movie");
+
 const io = require('socket.io').listen(server)
 
 let userList = []
@@ -67,5 +69,21 @@ io.on("connection", socket => {
     socket.broadcast.emit("newMessage", message);
   });
 
+  socket.on("newMovie", movie => {
+    Movie.create(movie)
+    .then(()=>{
+      return Movie.find()
+    })
+    .then(movies=>{
+      socket.emit('moviesList', movies)
+      socket.broadcast.emit('moviesList', movies)
+    })
+  });
+
 });
+
+
+
+
+
 

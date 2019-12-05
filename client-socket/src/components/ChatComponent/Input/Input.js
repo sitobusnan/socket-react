@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from 'react-bootstrap'
-import './input.css'
+import './Input.css'
 
-export default class input extends Component {
+export default class Input extends Component {
   constructor() {
     super();
     this.state = {

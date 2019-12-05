@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import Input from "./input";
+import Input from "../Input/Input";
+import Button from 'react-bootstrap/Button'
 
-
-export default class intro extends Component {
+export default class Intro extends Component {
+  goList=()=>{
+    this.props.history.push('/list')
+  }
   render() {
     return (
       <div>
@@ -11,6 +14,7 @@ export default class intro extends Component {
         </header>
         <dir id="inputName">
           <Input info={this.props.info}></Input>
+          <Button id="toMovies" variant="outline-success" onClick={()=>this.goList()}>Movies List</Button>
         </dir>
       </div>
     );
