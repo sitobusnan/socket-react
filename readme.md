@@ -3,8 +3,8 @@
 # Socket React Chat
 
 Este repo consta de dos servicios:
-- client-socket (Fron en React). Arranca con npm start
-- server-socket (Back en Express). Arranca con npm run dev
+- client-socket (Fron en React). Arranca con ```npm start```
+- server-socket (Back en Express). Arranca con ```npm run dev```
 
 El back necesita un archivo .env en el que se epecifique el puerto ```PORT=xxxx```
 
