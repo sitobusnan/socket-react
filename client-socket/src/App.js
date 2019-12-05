@@ -14,7 +14,7 @@ class App extends Component {
       userList : [],
       user: null
     }
-    this.socket = io('http://localhost:5000')
+    this.socket = io('http://192.168.96.69:5000')
 
     this.socket.on('list', list => {
       this.setState({...this.state, userList: list})
@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   updateList=(name)=>{
-    if(name.trim() != ''){
+    if(name.trim() !== ''){
       this.setState({...this.state, user: name},()=>{
         this.socket.emit('newUser', name)
         this.props.history.push('/chat')

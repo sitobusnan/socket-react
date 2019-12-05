@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form } from 'react-bootstrap'
+
 
 export default class InputMess extends Component {
     constructor(){
@@ -12,17 +15,34 @@ export default class InputMess extends Component {
         this.setState({...this.state, text: e.target.value})
     }
 
-    handlerSubmit=()=>{
+    handlerSubmit=(e)=>{
+        e.preventDefault()
         this.props.info(this.state.text)
     }
 
     render() {
         return (
-            <div>
-                <label htmlFor="">Text</label>
-                <input onChange={(e)=>{this.handlerText(e)}} type="text" name="text" id=""/>
-                <button onClick={()=>{this.handlerSubmit()}}>Send</button>
-            </div>
+            <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control
+                onChange={e => {
+                  this.handlerText(e);
+                }}
+                type="text"
+                placeholder="Your message"
+              />
+            </Form.Group>
+    
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={(e) => {
+                this.handlerSubmit(e);
+              }}
+            >
+              Send
+            </Button>
+          </Form>
         )
     }
 }

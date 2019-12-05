@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import Input from "./input";
-import logo from "../logo.svg";
+
 
 export default class intro extends Component {
   render() {
     return (
       <div>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={"https://res.cloudinary.com/deosqppvg/image/upload/v1562317352/ejercicio/logojirafa.png.png"} className="App-logo" alt="logo" />
         </header>
-        <dir>
+        <dir id="inputName">
           <Input info={this.props.info}></Input>
         </dir>
-        <dir></dir>
       </div>
     );
   }
