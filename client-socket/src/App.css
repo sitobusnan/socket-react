@@ -4,6 +4,11 @@
 
 }
 
+body{
+  height: 100vh;
+
+}
+
 .App {
   text-align: center;
   background-color: rgba(222, 222, 222, 0.899);
