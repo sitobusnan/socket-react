@@ -6,6 +6,9 @@ export default class Intro extends Component {
   goList=()=>{
     this.props.history.push('/list')
   }
+
+  // Este componente renderiza la portada, el input para el nickName
+  // y el boton a "/list"
   render() {
     return (
       <div>

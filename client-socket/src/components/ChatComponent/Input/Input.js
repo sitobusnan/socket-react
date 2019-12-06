@@ -19,6 +19,7 @@ export default class Input extends Component {
     this.props.info(this.state.name);
   };
 
+  // Este componente renderiza el input para escribir el NickName
   render() {
     return (
       <Form >
