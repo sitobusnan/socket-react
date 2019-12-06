@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Row, Col, Image, Jumbotron, Container } from "react-bootstrap";
+import { Button, Form, Row, Col, Image, Container } from "react-bootstrap";
 import "./List.css";
 
 export default class List extends Component {
@@ -75,7 +75,7 @@ export default class List extends Component {
         <div id="listGroup">
           {this.state.movies.map((elem, idx) => {
             return (
-              <Row>
+              <Row id="line">
                 <Col xs={6} md={4}>
                   <Image id="img-row" src={elem.image} rounded />
                 </Col>
